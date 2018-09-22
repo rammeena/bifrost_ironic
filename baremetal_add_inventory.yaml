@@ -1,0 +1,41 @@
+---
+bm-ironic02:
+  name: "bm-ironic02"
+  uuid: "00000000-0000-0000-0000-000000000006"
+  ipa_kernel_url: "http://172.21.61.200:8080/coreos/coreos_production_pxe.vmlinuz"
+  ipa_ramdisk_url: "http://172.21.61.200:8080/coreos/coreos_production_pxe_image-oem.cpio.gz"
+  driver: "ipmi"
+  driver_info:
+    power:
+      ipmi_username: "Administrator"
+      ipmi_address: "172.21.60.12"
+      ipmi_password: "Virtual650#"
+  nics:
+    -
+      mac: "ec:b1:d7:ad:d5:a8"
+  ipv4_address: "172.21.61.100"
+  ipv4_subnet_mask: "255.255.255.0"
+  ipv4_gateway: "172.21.61.1"
+  ipv4_nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+
+  driver_internal_info:
+    is_whole_disk_image: True
+  properties:
+    cpu_arch: "x86_64"
+    ram: 24576
+    disk_size: 278
+    cpus: 4
+    capabilities:
+      "boot_option": "local"
+      "boot_mode": "bios"
+      "cpu_hugepages_1g": true
+      "cpu_hugepages": true
+  instance_info:
+    image_source: "http://172.21.61.200:8080/centos.qcow2"
+    image_checksum: "e9b21377617de4064ae185b894d4db74"
+    capabilities:
+      boot_option: "local"
+      memory_mb: 24576
+      local_gb: 278
